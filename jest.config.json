@@ -1,0 +1,29 @@
+{
+  "preset": "ts-jest",
+  "clearMocks": true,
+  "testEnvironment": "jsdom",
+  "testMatch": ["**/*.test.[jt]s?(x)"],
+  "moduleNameMapper": {
+    "^components/(.*)$": "<rootDir>/src/components/$1",
+    "^consts": "<rootDir>/src/consts",
+    "^pages": "<rootDir>/src/pages",
+    "^store": "<rootDir>/src/store",
+    "^utils": "<rootDir>/src/utils"
+  },
+  "extensionsToTreatAsEsm": [".ts", ".tsx"],
+  "setupFilesAfterEnv": ["@testing-library/jest-dom/extend-expect"],
+  "transform": {
+    "^.+\\.tsx?$": [
+      "ts-jest",
+      {
+        "useESM": true
+      }
+    ],
+    "^.+\\.test\\..+\\.tsx?$": [
+      "ts-jest",
+      {
+        "useESM": true
+      }
+    ]
+  }
+}
